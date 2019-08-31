@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Friend Finder</title>
+</head>
+
+<body>
+    <div class="modal fade" tabindex="-1" role="dialog" id="results-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Best Match:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="match-name"></p>
+                    <img id="match-photo">
+                </div>
+                <div class="modal-footer">
+                    <button id="modal-button" type="button" class="btn btn-secondary"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="fa fa-fire"></span><strong>Friend Finder</strong></h1>
+            <hr>
+            <h2 class="text-center">Answer a few questions and find the friend with the greatest compatibility</h2>
+            <br>
+            <div class="card">
+                <div id="topHeader">
+                    <p id="headerText"></p>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Your name (required)</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <hr>
+            <br>
+
+            <div id="questions">
+
+                <div id="q1">
+                    <form class="qform">
+                        <p class="question">Question 1: I appreciate it when people lecture me on the wickedness of my
+                            ways.</p>
+                        <div>
+                            <input type="radio" id="q1-1" name="q1" value="1">
+                            <label for="q1-1">1</label>
+
+                            <input type="radio" id="q1-2" name="q1" value="2">
+                            <label for="q1-2">2</label>
+
+                            <input type="radio" id="q1-3" name="q1" value="3">
+                            <label for="q1-3">3</label>
+
+                            <input type="radio" id="q1-4" name="q1" value="4">
+                            <label for="q1-4">4</label>
+
+                            <input type="radio" id="q1-5" name="q1" value="5">
+                            <label for="q1-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q2">
+                    <form class="qform">
+                        <p class="question">Question 2: Sometimes I have a problem with my brain being missing.</p>
+                        <div>
+                            <input type="radio" id="q2-1" name="q2" value="1">
+                            <label for="q2-1">1</label>
+
+                            <input type="radio" id="q2-2" name="q2" value="2">
+                            <label for="q2-2">2</label>
+
+                            <input type="radio" id="q2-3" name="q2" value="3">
+                            <label for="q2-3">3</label>
+
+                            <input type="radio" id="q2-4" name="q2" value="4">
+                            <label for="q2-4">4</label>
+
+                            <input type="radio" id="q2-5" name="q2" value="5">
+                            <label for="q2-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q3">
+                    <form class="qform">
+                        <p class="question">Question 3: Sometimes people take an irrational dislike to me.</p>
+                        <div>
+                            <input type="radio" id="q3-1" name="q3" value="1">
+                            <label for="q3-1">1</label>
+
+                            <input type="radio" id="q3-2" name="q3" value="2">
+                            <label for="q3-2">2</label>
+
+                            <input type="radio" id="q3-3" name="q3" value="3">
+                            <label for="q3-3">3</label>
+
+                            <input type="radio" id="q3-4" name="q3" value="4">
+                            <label for="q3-4">4</label>
+
+                            <input type="radio" id="q3-5" name="q3" value="5">
+                            <label for="q3-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q4">
+                    <form class="qform">
+                        <p class="question">Question 4: Jayne is a girl's name.</p>
+                        <div>
+                            <input type="radio" id="q4-1" name="q4" value="1">
+                            <label for="q4-1">1</label>
+
+                            <input type="radio" id="q4-2" name="q4" value="2">
+                            <label for="q4-2">2</label>
+
+                            <input type="radio" id="q4-3" name="q4" value="3">
+                            <label for="q4-3">3</label>
+
+                            <input type="radio" id="q4-4" name="q4" value="4">
+                            <label for="q4-4">4</label>
+
+                            <input type="radio" id="q4-5" name="q4" value="5">
+                            <label for="q4-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q5">
+                    <form class="qform">
+                        <p class="question">Question 5: I never back down from a fight.</p>
+                        <div>
+                            <input type="radio" id="q5-1" name="q5" value="1">
+                            <label for="q5-1">1</label>
+
+                            <input type="radio" id="q5-2" name="q5" value="2">
+                            <label for="q5-2">2</label>
+
+                            <input type="radio" id="q5-3" name="q5" value="3">
+                            <label for="q5-3">3</label>
+
+                            <input type="radio" id="q5-4" name="q5" value="4">
+                            <label for="q5-4">4</label>
+
+                            <input type="radio" id="q5-5" name="q5" value="5">
+                            <label for="q5-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q6">
+                    <form class="qform">
+                        <p class="question">Question 6: I occasionally moonlight as a criminal mastermind.</p>
+                        <div>
+                            <input type="radio" id="q6-1" name="q6" value="1">
+                            <label for="q6-1">1</label>
+
+                            <input type="radio" id="q6-2" name="q6" value="2">
+                            <label for="q6-2">2</label>
+
+                            <input type="radio" id="q6-3" name="q6" value="3">
+                            <label for="q6-3">3</label>
+
+                            <input type="radio" id="q6-4" name="q6" value="4">
+                            <label for="q6-4">4</label>
+
+                            <input type="radio" id="q6-5" name="q6" value="5">
+                            <label for="q6-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q7">
+                    <form class="qform">
+                        <p class="question">Question 7: Any well-bred petty crook knows that the small, concealable
+                            weapons go to the far left of the
+                            place setting.</p>
+                        <div>
+                            <input type="radio" id="q7-1" name="q7" value="1">
+                            <label for="q7-1">1</label>
+
+                            <input type="radio" id="q7-2" name="q7" value="2">
+                            <label for="q7-2">2</label>
+
+                            <input type="radio" id="q7-3" name="q7" value="3">
+                            <label for="q7-3">3</label>
+
+                            <input type="radio" id="q7-4" name="q7" value="4">
+                            <label for="q7-4">4</label>
+
+                            <input type="radio" id="q7-5" name="q7" value="5">
+                            <label for="q7-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q8">
+                    <form class="qform">
+                        <p class="question">Question 8: I don't like the idea of someone hearing what I'm thinking.</p>
+                        <div>
+                            <input type="radio" id="q8-1" name="q8" value="1">
+                            <label for="q8-1">1</label>
+
+                            <input type="radio" id="q8-2" name="q8" value="2">
+                            <label for="q8-2">2</label>
+
+                            <input type="radio" id="q8-3" name="q8" value="3">
+                            <label for="q8-3">3</label>
+
+                            <input type="radio" id="q8-4" name="q8" value="4">
+                            <label for="q8-4">4</label>
+
+                            <input type="radio" id="q8-5" name="q8" value="5">
+                            <label for="q8-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q9">
+                    <form class="qform">
+                        <p class="question">Question 9: Getting stabbed makes me a mite ornery.</p>
+                        <div>
+                            <input type="radio" id="q9-1" name="q9" value="1">
+                            <label for="q9-1">1</label>
+
+                            <input type="radio" id="q9-2" name="q9" value="2">
+                            <label for="q9-2">2</label>
+
+                            <input type="radio" id="q9-3" name="q9" value="3">
+                            <label for="q9-3">3</label>
+
+                            <input type="radio" id="q9-4" name="q9" value="4">
+                            <label for="q9-4">4</label>
+
+                            <input type="radio" id="q9-5" name="q9" value="5">
+                            <label for="q9-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+
+                <div id="q10">
+                    <form class="qform">
+                        <p class="question">Question 10: A pretty floral bonnet is my favorite kind of hat.</p>
+                        <div>
+                            <input type="radio" id="q10-1" name="q10" value="1">
+                            <label for="q10-1">1</label>
+
+                            <input type="radio" id="q10-2" name="q10" value="2">
+                            <label for="q10-2">2</label>
+
+                            <input type="radio" id="q10-3" name="q10" value="3">
+                            <label for="q10-3">3</label>
+
+                            <input type="radio" id="q10-4" name="q10" value="4">
+                            <label for="q10-4">4</label>
+
+                            <input type="radio" id="q10-5" name="q10" value="5">
+                            <label for="q10-5">5</label>
+                        </div>
+                    </form>
+                </div>
+
+                <hr>
+
+                <div class="text-center">
+                    <button id="submit" class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span>Submit
+                        Answers!</button>
+                </div>
+
+            </div>
+
+            <hr>
+
+
+
+            <script type="text/javascript">
+
+                var newUser;
+
+                $("#submit").on("click", function (event) {
+                    event.preventDefault();
+
+                    var userName = $('#name').val().trim();
+                    var userScores = [];
+
+                    $.each($("input[name='q1']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q2']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q3']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q4']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q5']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q6']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q7']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q8']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q9']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+                    $.each($("input[name='q10']:checked"), function () {
+                        var answerValue = $(this).val();
+                        userScores.push(answerValue);
+                    });
+
+                    newUser = {
+                        "name": userName,
+                        "scores": userScores
+                    };
+
+                    var txt = $("input").val();
+
+                    $.post('/api/new', newUser, function (result) {
+
+                        $("#match-name").text(result.name);
+                        $("#match-photo").attr("src", result.photo);
+                        $("#results-modal").modal("toggle");
+
+                    });
+                });
+
+
+
+            </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
