@@ -3,7 +3,7 @@
 // We are linking our routes to a series of "data" sources.
 //===============================================================================
 
-var friendList = require("../data/friend.js");
+var friends = require("../data/friends");
 
 
 // ===============================================================================
@@ -18,7 +18,7 @@ module.exports = function (app) {
     // ---------------------------------------------------------------------------
 
     app.get("/api/friends", function (req, res) {
-        res.json(friendList);
+        res.json(friends);
     });
 
     // API POST Requests
@@ -38,6 +38,7 @@ module.exports = function (app) {
 
         var bestMatch = {
             name: "",
+            photo: "",
             friendDiff: Infinity
         };
 
