@@ -13,26 +13,6 @@
 </head>
 
 <body>
-    <div class="modal fade" tabindex="-1" role="dialog" id="results-modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Best Match:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p id="match-name"></p>
-                    <img id="match-photo">
-                </div>
-                <div class="modal-footer">
-                    <button id="modal-button" type="button" class="btn btn-secondary"
-                        data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="container">
 
@@ -62,8 +42,7 @@
 
                 <div id="q1">
                     <form class="qform">
-                        <p class="question">Question 1: I appreciate it when people lecture me on the wickedness of my
-                            ways.</p>
+                        <p class="question">Question 1: Do you enjoy playing board games?</p>
                         <div>
                             <input type="radio" id="q1-1" name="q1" value="1">
                             <label for="q1-1">1</label>
@@ -87,7 +66,7 @@
 
                 <div id="q2">
                     <form class="qform">
-                        <p class="question">Question 2: Sometimes I have a problem with my brain being missing.</p>
+                        <p class="question">Question 2: Do you enjoy going to parties?</p>
                         <div>
                             <input type="radio" id="q2-1" name="q2" value="1">
                             <label for="q2-1">1</label>
@@ -111,7 +90,7 @@
 
                 <div id="q3">
                     <form class="qform">
-                        <p class="question">Question 3: Sometimes people take an irrational dislike to me.</p>
+                        <p class="question">Question 3: Do you spend a lot of time outdoors?</p>
                         <div>
                             <input type="radio" id="q3-1" name="q3" value="1">
                             <label for="q3-1">1</label>
@@ -135,7 +114,7 @@
 
                 <div id="q4">
                     <form class="qform">
-                        <p class="question">Question 4: Jayne is a girl's name.</p>
+                        <p class="question">Question 4: Do you stay involved with politics?</p>
                         <div>
                             <input type="radio" id="q4-1" name="q4" value="1">
                             <label for="q4-1">1</label>
@@ -159,7 +138,7 @@
 
                 <div id="q5">
                     <form class="qform">
-                        <p class="question">Question 5: I never back down from a fight.</p>
+                        <p class="question">Question 5: Do you enjoy traveling?</p>
                         <div>
                             <input type="radio" id="q5-1" name="q5" value="1">
                             <label for="q5-1">1</label>
@@ -183,7 +162,7 @@
 
                 <div id="q6">
                     <form class="qform">
-                        <p class="question">Question 6: I occasionally moonlight as a criminal mastermind.</p>
+                        <p class="question">Question 6: Do you enjoy taking on challenges?</p>
                         <div>
                             <input type="radio" id="q6-1" name="q6" value="1">
                             <label for="q6-1">1</label>
@@ -207,9 +186,7 @@
 
                 <div id="q7">
                     <form class="qform">
-                        <p class="question">Question 7: Any well-bred petty crook knows that the small, concealable
-                            weapons go to the far left of the
-                            place setting.</p>
+                        <p class="question">Question 7: Are you a careful planner?</p>
                         <div>
                             <input type="radio" id="q7-1" name="q7" value="1">
                             <label for="q7-1">1</label>
@@ -233,7 +210,7 @@
 
                 <div id="q8">
                     <form class="qform">
-                        <p class="question">Question 8: I don't like the idea of someone hearing what I'm thinking.</p>
+                        <p class="question">Question 8: Do you enjoy watching movies and shows?</p>
                         <div>
                             <input type="radio" id="q8-1" name="q8" value="1">
                             <label for="q8-1">1</label>
@@ -257,7 +234,7 @@
 
                 <div id="q9">
                     <form class="qform">
-                        <p class="question">Question 9: Getting stabbed makes me a mite ornery.</p>
+                        <p class="question">Question 9: Are you a spiritual or religious person?</p>
                         <div>
                             <input type="radio" id="q9-1" name="q9" value="1">
                             <label for="q9-1">1</label>
@@ -281,7 +258,7 @@
 
                 <div id="q10">
                     <form class="qform">
-                        <p class="question">Question 10: A pretty floral bonnet is my favorite kind of hat.</p>
+                        <p class="question">Question 10: Do you have big goals or dreams?</p>
                         <div>
                             <input type="radio" id="q10-1" name="q10" value="1">
                             <label for="q10-1">1</label>
@@ -306,6 +283,27 @@
                 <div class="text-center">
                     <button id="submit" class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span>Submit
                         Answers!</button>
+                </div>
+
+                <div class="modal fade" tabindex="-1" role="dialog" id="results-modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Best Match:</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p id="match-name"></p>
+                                <img id="match-photo">
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modal-button" type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
