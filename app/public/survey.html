@@ -313,6 +313,8 @@
 
 
             <script type="text/javascript">
+// Run script
+
 
                 var newUser;
 
@@ -373,7 +375,6 @@
                     $.post('/api/new', newUser, function (result) {
 
                         $("#match-name").text(result.name);
-                        $("#match-photo").attr("src", result.photo);
                         $("#results-modal").modal("toggle");
 
                     });
